@@ -1,0 +1,27 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+plugins: [jekyll-paginate]
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            derbenoo
+tagline:          'IT-Sec stuff'
+description:      'PH44N2NVUkRdai 44QVREPyp+Pg=='
+url:              http://derbenoo.github.io
+baseurl:          /
+
+author:
+  name:           'Benjamin Assadsolimani'
+  url:            https://twitter.com/derbenoo
+
+paginate:         2
+
+# Custom vars
+version:          1.0
+
+github:
+  repo:           https://github.com/derbenoo
