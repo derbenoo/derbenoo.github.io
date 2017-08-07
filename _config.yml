@@ -12,7 +12,7 @@ title:            derbenoo
 tagline:          'IT-Sec stuff'
 description:      'PH44N2NVUkRdai 44QVREPyp+Pg=='
 url:              https://derbenoo.github.io
-baseurl:          /
+baseurl:          https://derbenoo.github.io/
 
 author:
   name:           'Benjamin Assadsolimani'
