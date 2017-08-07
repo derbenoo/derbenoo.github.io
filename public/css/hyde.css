@@ -107,6 +107,8 @@ html {
   display: inline-block;
   text-align: right;
   order: 2;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 .sidebar-nav-collapse ul{
