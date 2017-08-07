@@ -34,7 +34,7 @@
 html {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
-@media (min-width: 45em) {
+@media (min-width: 60em) {
   html {
     font-size: 16px;
   }
@@ -222,7 +222,7 @@ a.sidebar-nav-item:focus {
 
 @media (min-width: 60em) {
   .content {
-    max-width: 38rem;
+    max-width: 60rem;
     margin-left: 20rem;
     margin-right: 2rem;
   }
@@ -230,37 +230,11 @@ a.sidebar-nav-item:focus {
 
 @media (min-width: 90em) {
   .content {
+    max-width: 68rem;
     margin-left: 22rem;
     margin-right: 4rem;
   }
 }
-
-
-/*
- * Reverse layout
- *
- * Flip the orientation of the page by placing the `.sidebar` on the right.
- */
-
-@media (min-width: 48em) {
-  .layout-reverse .sidebar {
-    left: auto;
-    right: 0;
-  }
-  .layout-reverse .content {
-    margin-left: 2rem;
-    margin-right: 20rem;
-  }
-}
-
-@media (min-width: 64em) {
-  .layout-reverse .content {
-    margin-left: 4rem;
-    margin-right: 22rem;
-  }
-}
-
-
 
 /*
  * Themes
