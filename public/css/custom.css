@@ -55,4 +55,27 @@
   display: inline-block;
   order: 1;
   width: 48%;
+  text-align: justify;
+}
+
+.timeline > ul {
+	list-style: none;
+}
+
+
+.timeline > ul > li:before {
+  content: "";
+  display: block;
+  z-index: 1;
+  top: 0%;
+  left: 50%;
+  border: 1px solid;
+  border-width: 0 0 0 1px;
+  width: 1px;
+  height: 100px;
+  color: #616161;
+}
+
+.timeline > ul > li:first-child::before {
+  display: none;
 }
