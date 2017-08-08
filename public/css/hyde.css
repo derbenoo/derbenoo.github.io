@@ -192,7 +192,6 @@ a.sidebar-nav-item:focus {
 .sidebar-nav-item.active {
   font-weight: bold;
   text-decoration: underline;
-  font-size: 1.25rem;
 }
 
 /* Sticky sidebar

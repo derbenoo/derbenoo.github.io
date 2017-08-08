@@ -1,11 +1,15 @@
 ---
-layout: post
-title: PoliCTF 2017 - Tower
-categories: ctf
+category: ctf
+layout: ctfpost
+title: Tower
 author: Benjamin Assadsolimani
+event: PoliCTF 2017
+ctftime-task-id: 4292
+tags: [Grab Bag]
+points: 154
+solves: 74
+description: "You are entering a Lab where you will be the experiment."
 ---
-
-`Grab Bag` `154pts` `74 solves`
 
 
 ## Challenge Description
