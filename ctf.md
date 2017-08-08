@@ -3,7 +3,7 @@ layout: page
 title: CTF write-ups
 ---
 
-
+<hr>
 <div class="posts">
   {% for post in site.categories.ctf %}
   <div class="post">
