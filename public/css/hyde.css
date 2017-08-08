@@ -34,12 +34,12 @@
 html {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
-@media (min-width: 48em) {
+@media (min-width: 60em) {
   html {
     font-size: 16px;
   }
 }
-@media (min-width: 58em) {
+@media (min-width: 90em) {
   html {
     font-size: 20px;
   }
@@ -54,13 +54,12 @@ html {
  */
 
 .sidebar {
-  text-align: left;
   
   padding: 2rem 1rem;
   color: rgba(255,255,255,.5);
   background-color: #202020;
 }
-@media (min-width: 48em) {
+@media (min-width: 60em) {
   .sidebar {
     position: fixed;
     top: 0;
@@ -69,6 +68,32 @@ html {
     width: 18rem;
     text-align: right;
   }
+
+  .sidebar-sticky {
+    flex-direction: column !important;
+  }
+
+  .sidebar-about p{
+    display:inline-block !important;
+  }
+
+  .sidebar-about h1 {
+    font-size: 3.25rem !important;
+  }
+
+  .sidebar-nav {
+    display:inline-block !important;
+  }
+
+  .sidebar-nav-collapse {
+    display:none !important;
+  }
+}
+
+.sidebar-sticky {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 /* Sidebar links */
@@ -76,18 +101,86 @@ html {
   color: #fff;
 }
 
+/* Sidebar collapse*/
+.sidebar-nav-collapse {
+  vertical-align:top;
+  display: inline-block;
+  text-align: right;
+  order: 2;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.sidebar-nav-collapse ul{
+  list-style:none;  
+  margin:0;
+  padding:0;
+}
+.sidebar-nav-collapse ul li{
+  display:none;
+  height:20px;    
+  padding:12px;   
+}
+.sidebar-nav-collapse ul li:last-child{
+  border-bottom-left-radius:4px;
+  border-bottom-right-radius:4px;
+}
+.sidebar-nav-collapse label:before{
+  height:2px;
+  width:20px;
+  background:#FFFFFF;
+  display:inline-block;
+  content:"";
+  box-shadow:0px -5px 0px 0px  #FFFFFF,
+             0px -10px 0px 0px #FFFFFF;
+  transition:all .5s;
+  position:relative;
+  opacity:1;
+}
+.sidebar-nav-collapse label{
+  display:block;  
+  padding:10px;
+  color:white;  
+  cursor:pointer; 
+}
+.sidebar-nav-collapse input[type="checkbox"]{
+  display: none;
+  position:absolute;
+}
+#collapse:checked ~ li{  
+  margin-top:0;
+  display: block;
+}
+#collapse:checked + label:before{
+  position:relative;
+  opacity:0.5;
+  
+}
+
+
 /* About section */
+.sidebar-about{
+  display: inline-block;
+}
+
+.sidebar-about p{
+  display: none;
+}
+
 .sidebar-about h1 {
   color: #fff;
   margin-top: 0;
   font-family: "Abril Fatface", serif;
-  font-size: 3.25rem;
+  font-size: 1.25rem;
+  padding: 0.5rem;
 }
 
 /* Sidebar nav */
 .sidebar-nav {
   margin-bottom: 1rem;
+  display: none;
 }
+
 .sidebar-nav-item {
   display: block;
   line-height: 1.75;
@@ -108,7 +201,7 @@ a.sidebar-nav-item:focus {
  * contents to the bottom of the sidebar in tablets and up.
  */
 
-@media (min-width: 48em) {
+@media (min-width: 60em) {
   .sidebar-sticky {
     position: absolute;
     right:  1rem;
@@ -129,47 +222,21 @@ a.sidebar-nav-item:focus {
   padding-bottom: 4rem;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 60em) {
   .content {
-    max-width: 38rem;
+    max-width: 60rem;
     margin-left: 20rem;
     margin-right: 2rem;
   }
 }
 
-@media (min-width: 64em) {
+@media (min-width: 90em) {
   .content {
+    max-width: 68rem;
     margin-left: 22rem;
     margin-right: 4rem;
   }
 }
-
-
-/*
- * Reverse layout
- *
- * Flip the orientation of the page by placing the `.sidebar` on the right.
- */
-
-@media (min-width: 48em) {
-  .layout-reverse .sidebar {
-    left: auto;
-    right: 0;
-  }
-  .layout-reverse .content {
-    margin-left: 2rem;
-    margin-right: 20rem;
-  }
-}
-
-@media (min-width: 64em) {
-  .layout-reverse .content {
-    margin-left: 4rem;
-    margin-right: 22rem;
-  }
-}
-
-
 
 /*
  * Themes
@@ -178,7 +245,7 @@ a.sidebar-nav-item:focus {
  * within blog posts. To use, add the class of your choosing to the `body`.
  */
 
-/* Base16 (http://chriskempson.github.io/base16/#default) */
+/* Base16 (https://chriskempson.github.io/base16/#default) */
 
 /* Red */
 .theme-base-08 .sidebar {
