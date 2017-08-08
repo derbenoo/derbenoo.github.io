@@ -1,7 +1,7 @@
 # Dependencies
 highlighter:      rouge
 
-plugins: [jekyll-paginate]
+plugins:          [jekyll-paginate]
 
 # Permalinks
 permalink:        pretty
@@ -20,6 +20,5 @@ author:
 paginate:         5
 
 # Custom vars
-
 github:
   repo:           https://github.com/derbenoo

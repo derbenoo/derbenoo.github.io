@@ -45,24 +45,6 @@ html {
   }
 }
 
-
-/*
- * Image zoom on hover
- *
- */
-img {
-  -moz-transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-img:hover {
-  -moz-transform: scale(1.00);
-  -webkit-transform: scale(1.00);
-  transform: scale(1.00);
-}
-
-
 /*
  * Sidebar
  *
