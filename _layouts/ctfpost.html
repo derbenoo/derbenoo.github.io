@@ -11,14 +11,14 @@ layout: default
       <td>Points</td>
       <td>Solves</td>
       <td>Categories</td>
-      <td>Task link</td>
+      <td>Task ID</td>
     </tr>
     <tr>
       <td>{{ page.event }}</td>
       <td>{{ page.points }}</td>
       <td>{{ page.solves }}</td>
       <td>{{ page.tags }}</td>
-      <td><a target="_blank" href="https://ctftime.org/task/{{page.ctftime-task-id}}">ctftime.org/task/{{page.ctftime-task-id}}</a></td>
+      <td><a target="_blank" href="https://ctftime.org/task/{{page.ctftime-task-id}}">{{page.ctftime-task-id}}</a></td>
     </tr>
   </table>
   <br />
