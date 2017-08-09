@@ -29,23 +29,42 @@ hr {
 
 
 <div  class="right-panel" >
+	<br />
 	<center>
 		<div class="timeline">
 			<ul>
 				<li>
 				<div class="profile-circle" >
-					<img class="profile-img" src="/public/images/profile.jpg"/>
+					<img class="profile-img" src="/public/images/about/profile.jpg"/>
 				</div>
 				</li>
-				<li>
+
+				<li class="long">
 				<div class="profile-circle" >
-					<img class="profile-img" src="/public/images/profile.jpg"/>
+					<img class="profile-img" src="/public/images/about/ecsc17_logo.png"/>
 				</div>
+				ECSC 2017
 				</li>
+
 				<li>
 				<div class="profile-circle" >
-					<img class="profile-img" src="/public/images/profile.jpg"/>
+					<img class="profile-img" src="/public/images/about/cscg_logo.png"/>
 				</div>
+				CSCG 2017
+				</li>
+
+				<li>
+				<div class="profile-circle" >
+					<img class="profile-img" src="/public/images/about/ecsc16_logo.png"/>
+				</div>
+				ECSC 2016
+				</li>
+
+				<li>
+				<div class="profile-circle" >
+					<img class="profile-img" src="/public/images/about/cscg_logo.png"/>
+				</div>
+				CSCG 2016
 				</li>
 			</ul>
 		</div>
