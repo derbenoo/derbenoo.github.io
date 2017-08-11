@@ -1,8 +1,9 @@
 ---
 layout: page
-title: Books
+title: Book Summaries
 ---
 
+<hr>
 <p class="message">
   Summaries of books I read for quickly looking up that one detail I forgot but remembered as really useful.
 </p>

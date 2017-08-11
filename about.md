@@ -38,18 +38,20 @@ Active member of the <a href="https://ctftime.org/team/18419" target="_blank">AL
 </div>
 
 
-<div  class="right-panel" >
+<div  class="right-panel">
 	<br />
 	<center>
 		<div class="timeline">
 			<ul>
 				<li>
 				<div class="profile-circle" >
+					<a target="_blank" href="https://twitter.com/derbenoo">
 					<img class="profile-img" src="/public/images/about/profile.jpg"/>
+					</a>
 				</div>
 				</li>
 
-				<li class="long">
+				<li>
 				<div class="profile-circle" >
 					<a target="_blank" href="https://www.europeancybersecuritychallenge.eu/">
 					<img class="profile-img" src="/public/images/about/ecsc17_logo.png"/>
@@ -60,7 +62,7 @@ Active member of the <a href="https://ctftime.org/team/18419" target="_blank">AL
 
 				<li>
 				<div class="profile-circle" >
-					<a target="_blank" href="https://www.cscg.de/">
+					<a target="_blank" href="https://www.cscg.de/das-finale-der-cscg-2017-ist-entschieden-stolz-dankbar-gluecklich-malaga/">
 					<img class="profile-img" src="/public/images/about/cscg_logo.png"/>
 					</a>
 				</div>
@@ -69,18 +71,29 @@ Active member of the <a href="https://ctftime.org/team/18419" target="_blank">AL
 
 				<li>
 				<div class="profile-circle" >
+					<a target="_blank" href="https://www.cscg.de/gemeinsam-viel-erreicht/">
 					<img class="profile-img" src="/public/images/about/ecsc16_logo.png"/>
+					</a>
 				</div>
 				ECSC 2016
 				</li>
 
 				<li>
 				<div class="profile-circle" >
-					<a target="_blank" href="https://www.cscg.de/page/3/">
+					<a target="_blank" href="https://www.cscg.de/gewinner-der-cyber-security-challenge-2016/">
 					<img class="profile-img" src="/public/images/about/cscg_logo.png"/>
 					</a>
 				</div>
 				CSCG 2016
+				</li>
+
+				<li>
+				<div class="profile-circle" >
+					<a target="_blank" href="https://www.comsys.rwth-aachen.de/research/past-projects/sensorcloud/">
+					<img class="profile-img" src="/public/images/about/sensorcloud.png"/>
+					</a>
+				</div>
+				SensorCloud Project
 				</li>
 			</ul>
 		</div>

@@ -2,8 +2,7 @@
 layout: post
 title: Practical Reverse Engineering
 categories: books
-author: Chris Eagle
+author: Bruce Dang, Alexandre Gazet, Elias Bachaalany
 tags: [Reverse Engineering, Binary Analysis]
 ---
 
-The way to go!
