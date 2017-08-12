@@ -45,7 +45,7 @@ Active member of the <a href="https://ctftime.org/team/18419" target="_blank">AL
 			<ul>
 				<li>
 				<div class="profile-circle" >
-					<a target="_blank" href="https://twitter.com/derbenoo">
+					<a target="_blank" href="https://github.com/derbenoo">
 					<img class="profile-img" src="/public/images/about/profile.jpg"/>
 					</a>
 				</div>
