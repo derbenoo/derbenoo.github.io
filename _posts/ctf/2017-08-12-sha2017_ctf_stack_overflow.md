@@ -47,15 +47,28 @@ Wait, the last point seems pretty odd. The function is supposed to implement a *
 
 ## Counter Mode
 
-Encryption using counter mode basically works like this:
+Block ciphers (such as AES) are able to encrypt or decrypt a single block of fixed length. Therefore, we need to specify modes of operation that dictate how inputs that are longer than a block size are being processed. Every mode of operation chains together multiple applications of the block cipher transformation to process larger inputs. The **counter mode** does this by successively encrypting a *counter* value and using the resulting ciphertext blocks as a keystream, which essentially turns the block cipher into a stream cipher. The plaintext is then simply XORed with the keystream for encryption. Decryption works analogously as we only need to reproduce the same keystream and can perform an XOR on the ciphertext to recover the plaintext.
+
+The counter is typically implemented by using a publicly known initialization vector and incrementing it:
 
 ![Counter Mode]({{site.url}}/public/images/ctf/sha2017_ctf_stack_overflow_counter_mode.png)
 
 * E<sub>k</sub>: Block cipher (e.g., AES) with key _k_
-* m<sub>1</sub>, m<sub>2</sub>, ... : Plaintext message bits
-* c<sub>1</sub>, c<sub>2</sub>, ... : Resulting ciphertext bits
+* m<sub>1</sub>, m<sub>2</sub>, ... : Plaintext message blocks
+* c<sub>1</sub>, c<sub>2</sub>, ... : Resulting ciphertext blocks
 * IV: Initialisation vector used for the counter
 
-So we turn a block cipher into a stream cipher by using the block cipher to encrypt a counter (IV+1, IV+2, ...) and performing an XOR operation of the resulting ciphertext with the corresponding plaintext bit. 
+Note that by turning the block cipher into a stream cipher we have to make sure that the security requirements for a stream cipher are met. The most important requirement is that the keystream is not allowed to ever repeat itself. Otherwise, an attacker can XOR the ciphertext parts where the key repeats itself and obtain the XOR of the two plaintexts:
+
+{% highlight null %}
+C1= P1 XOR K
+C2= P1 XOR K
+
+C1 XOR C2= (P1 XOR K) XOR (P2 XOR K)= P1 XOR P2
+
+{% endhighlight %}
+
+The Python package `Crypto` allows us to specify a custom counter function. Unfortunately, this freedom can be abused to implement very insecure counter functions such as `counter=lambda: secret`. With `secret` being only 16 bytes long, we basically subverted the whole security of AES and reduced it to a repeating 16 byte long stream cipher key. All we have to do now is to XOR the ciphertext parts that were encrypted under the same key and guess some plaintext. While guessing plaintext is pretty pointless against a properly used stream cipher, it makes sense in this scenario since we have a method of validating our guess. Let's use the example from above and pretend we are guessing what P1 could be. Since we have access to `P1 XOR P2`, we can check our guess (let's call it P1') by calculating `P1' XOR (P1 XOR P2)` and see whether P2 makes sense or not. If so, we probably guessed the correct plaintext for P1. Once we successfully did that, we can extract the key by simple calculating `C1 XOR P1= K`
 
 ## Guessing some plaintext
+
