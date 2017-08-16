@@ -125,3 +125,7 @@
 .timeline > ul > li:first-child::before {
   display: none;
 }
+
+.ctfpost {
+  text-align: justify;
+}
