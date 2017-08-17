@@ -70,6 +70,27 @@ C1 XOR C2= (P1 XOR K) XOR (P2 XOR K)= P1 XOR P2
 
 The Python package `Crypto` allows us to specify a custom counter function. Unfortunately, this freedom can be abused to implement very insecure counter functions such as `counter=lambda: secret`. With `secret` being only 16 bytes long, we basically subverted the whole security of AES and reduced it to a repeating 16 byte long stream cipher key. All we have to do now is to XOR the ciphertext parts that were encrypted under the same key and guess some plaintext. While guessing plaintext is pretty pointless against a properly used stream cipher, it makes sense in this scenario since we have a method of validating our guess. Let's use the example from above and pretend we are guessing what P1 could be. Since we have access to `P1 XOR P2`, we can check our guess (let's call it P1') by calculating `P1' XOR (P1 XOR P2)` and see whether P2 makes sense or not. If so, we probably guessed the correct plaintext for P1. Once we successfully did that, we can extract the key by simple calculating `C1 XOR P1= K`
 
-## Guessing some plaintext
+## Guessing some plaintext using [OTP PWN](https://github.com/derbenoo/otp_pwn)
 
-	
+The process described in the above section is greatly facilitated by the [otp_pwn](https://github.com/derbenoo/otp_pwn) utility, which allows us to interactively check plaintext guesses (and do other cool stuff like crib dragging). We known from the source code that the length of the repeating key is 16 bytes, which is all the information we need to start using the tool:
+
+`python otp_pwn.py flag.pdf.enc 16`
+
+We are presented with an overview of the encrypted file:
+
+![OTP PWN utility overview]({{site.url}}/public/images/ctf/sha2017_ctf_stack_overflow_otp_pwn_overview.png)
+
+The file contents is split up in blocks of the size of the keylength, so each block is encrypted with exactly the same key. This allows us to quickly check whether a plaintext guess was correct as we can see whether the resulting key changes produce valid plaintext in the other blocks or not.
+
+So, we know from the filename that we are probably dealing with an encrypted PDF file. We know that most PDF files start with `%PDF-1.`, so lets apply that plaintext guess with the command `:p 0 %PDF-1.`:
+
+![OTP PWN first plaintext guess]({{site.url}}/public/images/ctf/sha2017_ctf_stack_overflow_otp_pwn_first_guess.png)
+
+Looks like we guessed correctly! The tool shows the key that resulted from the plaintext input and highlights in bold all positions that the key has been applied to. We study the PDF file specification a bit more and quickly find out that the position 21 and 22 are probably the beginning of the `/Page` directive. So we type in the command `:p 23 age` and indeed, the rest of the blocks decrypt correctly as well. We continue guessing plaintext where we already decrypted the start of a command and are quickly able to recover each part of the key: `f3 ba fd 33 1d 28 44 a8 25 20 de b7 de c0 6f b9`. We dump the decrypted file using the command `:d flag.pdf` and take a look:
+
+![OTP PWN first plaintext guess]({{site.url}}/public/images/ctf/sha2017_ctf_stack_overflow_flag.jpg)
+
+Agreed, Stack Overflow is a nice place but always make sure you understand what you are copy and pasting!
+
+
+The flag is: &nbsp;<b><font color="red">flag{15AD69452103C5DF1CF61E9D98893492}</font></b>
