@@ -3,7 +3,6 @@
 
     <nav class="sidebar-nav">
           <a class="sidebar-nav-item{% if page.url == '/' | apppend: site.baseurl %} active{% endif %}" href="/{{ site.baseurl }}">Home</a>
-
       {% for node in site.pages %}
         {% if node.title != null %}
           {% if node.layout == "page" %}

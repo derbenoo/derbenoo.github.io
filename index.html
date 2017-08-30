@@ -1,11 +1,26 @@
 ---
 layout: default
-title: Home
+title: Hey there!
 ---
 
 <div class="page">
   <h1 class="page-title">{{ page.title }}</h1>
 	<hr>
-  Nothing to see here.... yet!
+	<h2>Latest CTF write-ups</h2>
+	<ul>
+  {% for post in site.categories.ctf limit:3 %}
+  <li>
+      <a href="{{ post.url }}">
+        <b>{{post.event}} - {{ post.title }}</b>
+      </a>
+    {{ post.date | date_to_string }}
+  </li>
+  {% endfor %}
+  <button> >> View all</button>
+  </ul>
+
+	<h2>Projects</h2>
+	
+	<h2></h2>
 </div>
 
