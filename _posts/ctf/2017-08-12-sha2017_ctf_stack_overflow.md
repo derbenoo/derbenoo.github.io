@@ -80,9 +80,9 @@ We are presented with an overview of the encrypted file:
 
 ![OTP PWN utility overview]({{site.url}}/public/images/ctf/sha2017_ctf_stack_overflow_otp_pwn_overview.png)
 
-The file contents is split up in blocks of the size of the keylength, so each block is encrypted with exactly the same key. This allows us to quickly check whether a plaintext guess was correct as we can see whether the resulting key changes produce valid plaintext in the other blocks or not.
+The file contents is split up in blocks of the size of the key length, so each block is encrypted with exactly the same key. This allows us to quickly check whether a plaintext guess was correct as we can see whether the resulting key changes produce valid plaintext in the other blocks or not.
 
-So, we know from the filename that we are probably dealing with an encrypted PDF file. We know that most PDF files start with `%PDF-1.`, so lets apply that plaintext guess with the command `:p 0 %PDF-1.`:
+So, we know from the filename that we are probably dealing with an encrypted PDF file. We know that most PDF files start with `%PDF-1.`, so let's apply that plaintext guess with the command `:p 0 %PDF-1.`:
 
 ![OTP PWN first plaintext guess]({{site.url}}/public/images/ctf/sha2017_ctf_stack_overflow_otp_pwn_first_guess.png)
 
@@ -93,4 +93,4 @@ Looks like we guessed correctly! The tool shows the key that resulted from the p
 Agreed, Stack Overflow is a nice place but always make sure you understand what you are copy and pasting!
 
 
-The flag is: &nbsp;<b><font color="red">flag{15AD69452103C5DF1CF61E9D98893492}</font></b>
+The flag is: `flag{15AD69452103C5DF1CF61E9D98893492}`
