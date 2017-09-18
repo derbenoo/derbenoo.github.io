@@ -2,7 +2,6 @@
 /*
  * Footer
  */
-
 .footer {
   text-align: center;
   font-size: 10px;
@@ -11,8 +10,6 @@
 /*
  * Timeline
  */
-
-
 @media (min-width: 70em) {
   .profile-circle {
     width: 10rem !important;
@@ -128,4 +125,26 @@
 
 .ctfpost {
   text-align: justify;
+}
+
+/*
+ * Buttons
+ */
+.button {
+    background-color: white;
+    border: 2px solid #ac4142;
+    color: #ac4142;
+    padding: 4px 8px;
+    text-align: center;
+    text-decoration: bold;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-top: 0.8em;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #ac4142;
+    color: white;
 }
