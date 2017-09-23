@@ -45,7 +45,7 @@ So in each block, a byte of our input is compared with a byte of the "correct" i
 
 ## GDB/ PEDA Script
 
-The script that automatically extracts the flag looks like the following:
+While Python GDB is already quite nice for scripting GDB, we make it even nic by using [PEDA](https://github.com/longld/peda). You need to have GDB set up with PEDA to be able to execute the following script:
 
 ``` python
 # run like this: gdb -x warmup.py
