@@ -71,7 +71,7 @@ peda.searchmem(start, end, search)         # Search for all instances of a patte
 peda.searchmem_by_range(mapname, search)   # Search for all instances of a pattern in virtual memory ranges (string): (address(Int), hexval(String))
 peda.search_reference(search, mapname)     # Search for all references to a value in memory ranges (String): (address(Int), hexval(String))
 peda.search_address(searchfor, belongto)   # Search for all valid addresses in memory ranges: (address(Int), value(Int))
-peda.search_pointer(searchfor, belongto)   #
+peda.search_pointer(searchfor, belongto)   # Search for all valid pointers in memory ranges: (address(Int), value(Int))
 ```
 
 ## Execution flow
